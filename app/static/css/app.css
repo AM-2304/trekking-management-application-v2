@@ -1,0 +1,57 @@
+/* A handful of layout rules. Everything else comes from Bootstrap. */
+
+body {
+  background: #f5f7fa;
+}
+
+/* Sidebar + content, side by side on desktop and stacked on mobile. */
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 230px;
+  flex-shrink: 0;
+}
+
+/* Stops long tables from forcing the whole page to scroll sideways. */
+.min-width-0 {
+  min-width: 0;
+}
+
+.trek-img {
+  height: 160px;
+  object-fit: cover;
+}
+
+/* Centres the login and registration cards. */
+.auth-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 460px;
+}
+
+/* On small screens the sidebar becomes a full-width strip along the top. */
+@media (max-width: 767.98px) {
+  .app-shell {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+  }
+  .sidebar .nav {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+  }
+  .sidebar .nav-item {
+    margin-right: 0.25rem;
+  }
+}

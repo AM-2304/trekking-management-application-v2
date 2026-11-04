@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trekking Management Application</title>
+
+  <!-- The only Jinja2 template: it just loads Bootstrap and Vue, then hands over
+       to the Vue app. Served from static/vendor/ so this works offline. -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+</head>
+<body>
+  <div id="app"><app-root></app-root></div>
+
+  <script src="{{ url_for('static', filename='vendor/vue.global.prod.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/bootstrap.bundle.min.js') }}"></script>
+
+  <!-- Shared pieces, then per-role screens, then the root app. -->
+  <script src="{{ url_for('static', filename='js/api.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/components/shared.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/views/auth.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/views/admin.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/views/staff.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/views/user.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
